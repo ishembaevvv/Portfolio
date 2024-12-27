@@ -4,5 +4,22 @@
 		"works": "WORKS",
 		"skills": "SKILLS",
 		"contacts": "CONTACTS"
+	},
+
+	"home": {
+		"title": {
+			"Hi, I'm": "Hi, I'm",
+			"Anatai": "Anatai",
+			"Nice meet you": "Nice meet you"
+		},
+
+		"about": {
+			"about me": "About me",
+			"My name": "My name is Anatai Ishembaev",
+			"years": "19 years old",
+			"Kyrgyzstan": "Front-End Developer from Kyrgyzstan",
+			"Responsible": " I'm Responsible, eager to grow and learn new technologies, attentive to detail, a team player, goal-oriented, and persistent",
+			"further": "I am ready to learn and apply modern technologies to create high-quality and user-friendly interfaces and to develop further in the IT field"
+		}
 	}
 }
