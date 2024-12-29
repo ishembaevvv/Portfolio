@@ -1,0 +1,30 @@
+.footer {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+
+	.contacts {
+		ul {
+			display: flex;
+			gap: 15px;
+
+			li {
+				list-style: none;
+				width: 60px;
+				height: 60px;
+				border: 1px solid var(--medium);
+				border-radius: 50%;
+				display: grid;
+				place-items: center;
+				transition: 0.2s;
+
+				
+
+				&:hover {
+					transform: scale(1.1);
+					background: var(--medium);
+				}
+			}
+		}
+	}
+}

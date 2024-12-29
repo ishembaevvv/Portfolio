@@ -1,15 +1,14 @@
-import { FaLinkedin } from "react-icons/fa6";
-import { FaGithubSquare, FaPhoneAlt } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { useLocalStorage } from "../../utils/hooks/useLocalStorage";
-import { Link } from "react-router-dom";
 import { PATH } from "../../utils/constants/Constants";
 import styles from "./Header.module.scss";
 import i18n from "../../utils/helpers/i1next";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
 	const { t } = useTranslation();
+	const navigate = useNavigate();
 	const [language, setLanguage] = useLocalStorage("language", "en");
 
 	const handleLanguageChange = () => {
@@ -29,47 +28,12 @@ export const Header = () => {
 			</a>
 
 			<ul className={styles.list}>
-				<li>
-					<Link to={PATH.home}>{t("header.home")}</Link>
-				</li>
-				<li>
-					<Link to={PATH.works}>{t("header.works")}</Link>
-				</li>
-				<li>
-					<Link to={PATH.skills}>{t("header.skills")}</Link>
-				</li>
-				<li>
-					<Link to={PATH.contacts}>{t("header.contacts")}</Link>
-				</li>
+				<li onClick={() => navigate(PATH.main)}>{t("header.home")}</li>
+				<li onClick={() => navigate(PATH.about)}>{t("header.about")}</li>
+				<li onClick={() => navigate(PATH.works)}>{t("header.works")}</li>
+				<li onClick={() => navigate(PATH.skills)}>{t("header.skills")}</li>
+				<li onClick={() => navigate(PATH.contacts)}>{t("header.contacts")}</li>
 			</ul>
-
-			<div className={styles.contacts}>
-				<ul>
-					<li>
-						<a
-							href="https://www.linkedin.com/in/anatai-ishembaev"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FaLinkedin />
-						</a>
-					</li>
-					<li>
-						<a
-							href="https://github.com/ishembaevvv"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FaGithubSquare />
-						</a>
-					</li>
-					<li>
-						<a href="https://mail.google.com/mail/?view=cm&to=ishembaevvv05@gmail.com">
-							<MdEmail />
-						</a>
-					</li>
-				</ul>
-			</div>
 
 			<h3 className={styles.language} onClick={handleLanguageChange}>
 				{language == "ru" ? "EN" : "RU"}
